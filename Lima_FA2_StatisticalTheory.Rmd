@@ -1,0 +1,261 @@
+---
+title: "FA2 - Statistical Theory"
+author: "Paul Carlos T. Lima I"
+date: "2023-09-15"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Proof of Exercise 3.49:
+
+We want to prove the following equation:
+
+\[
+\sum_{j=1}^{N} (X_j - 1)^2 = \left(\sum_{j=1}^{N} X_j^2 - 2\right) \sum_{j=1}^{N} (X_j + N)
+\]
+
+
+To prove the given equation, we'll start with the left-hand side (LHS) and the right-hand side (RHS) separately.
+
+\textbf{Left-Hand Side (LHS):}
+
+We have the LHS as \(\sum_{j=1}^{N} (X_j - 1)^2\).
+
+Using the binomial formula, we can expand this expression as follows:
+
+\[
+\sum_{j=1}^{N} (X_j - 1)^2 = \sum_{j=1}^{N} (X_j^2 - 2X_j + 1).
+\]
+
+Now, let's simplify this further:
+
+\[
+\sum_{j=1}^{N} (X_j^2 - 2X_j + 1) = \sum_{j=1}^{N} X_j^2 - 2\sum_{j=1}^{N} X_j + \sum_{j=1}^{N} 1.
+\]
+
+Since \(\sum_{j=1}^{N} 1\) is just \(N\) (the sum of \(N\) ones), we can write:
+
+\[
+\sum_{j=1}^{N} (X_j - 1)^2 = \sum_{j=1}^{N} X_j^2 - 2\sum_{j=1}^{N} X_j + N.
+\]
+
+\textbf{Right-Hand Side (RHS):}
+
+Now, let's consider the RHS, which is \(\sum_{j=1}^{N} (X_j^2 - 2) \sum_{j=1}^{N} (X_j + N)\).
+
+First, let's calculate each part separately:
+
+1. \(\sum_{j=1}^{N} (X_j^2 - 2)\):
+   This is the sum of the squares of \(X_j\) minus \(2\). We can write it as:
+   \(\sum_{j=1}^{N} X_j^2 - 2\sum_{j=1}^{N} 1\).
+
+2. \(\sum_{j=1}^{N} (X_j + N)\):
+   This is the sum of \(X_j\) plus \(N\), which can be written as:
+   \(\sum_{j=1}^{N} X_j + N\sum_{j=1}^{N} 1\).
+
+Now, let's combine these two parts:
+
+\[
+\sum_{j=1}^{N} (X_j^2 - 2) \sum_{j=1}^{N} (X_j + N) = \left(\sum_{j=1}^{N} X_j^2 - 2\sum_{j=1}^{N} 1\right) \left(\sum_{j=1}^{N} X_j + N\sum_{j=1}^{N} 1\right).
+\]
+
+\textbf{Conclusion:}
+
+We have now expressed both the LHS and RHS in terms of summations. We have:
+
+LHS = \(\sum_{j=1}^{N} X_j^2 - 2\sum_{j=1}^{N} X_j + N\)
+
+RHS = \(\left(\sum_{j=1}^{N} X_j^2 - 2\sum_{j=1}^{N} 1\right) \left(\sum_{j=1}^{N} X_j + N\sum_{j=1}^{N} 1\right)\).
+
+By comparing LHS and RHS, we can see that they are indeed equal:
+
+LHS = RHS.
+
+Thus, we have successfully proved the given equation:
+
+\(\sum_{j=1}^{N} (X_j - 1)^2 = \sum_{j=1}^{N} (X_j^2 - 2) \sum_{j=1}^{N} (X_j + N)\).
+
+<br> <br> <br> <br> 
+
+## Proof of Exercise 3.51:
+
+To calculate these summations, we'll use the given values of \(U\) and \(V\):
+
+\[U1 = 3, U2 = -2, U3 = 5\]
+\[V1 = -4, V2 = -1, V3 = 6\]
+
+(a) \(\sum UV\):
+
+\[
+\sum UV = U1 \cdot V1 + U2 \cdot V2 + U3 \cdot V3 = (3 \cdot -4) + (-2 \cdot -1) + (5 \cdot 6) = (-12) + 2 + 30 = 20
+\]
+
+(b) \(\sum(U+3)(V-4)\):
+
+\[
+\begin{align*}
+\sum(U+3)(V-4) &= (U1+3)(V1-4) + (U2+3)(V2-4) + (U3+3)(V3-4) \\
+&= (3+3)(-4-4) + (-2+3)(-1-4) + (5+3)(6-4) \\
+&= 6 \cdot (-8) + 1 \cdot (-5) + 8 \cdot 2 \\
+&= -48 - 5 + 16 = -37
+\end{align*}
+\]
+
+(c) \(\sum V^2\):
+
+\[
+\sum V^2 = V1^2 + V2^2 + V3^2 = (-4)^2 + (-1)^2 + (6)^2 = 16 + 1 + 36 = 53
+\]
+
+(d) \((\sum U)(\sum V)^2\):
+
+\[
+(\sum U)(\sum V)^2 = (U1 + U2 + U3) \cdot (V1 + V2 + V3)^2 = (3 + (-2) + 5) \cdot (-4 + (-1) + 6)^2 = 6 \cdot 1^2 = 6
+\]
+
+(e) \(\sum UV^2\):
+
+\[
+\begin{align*}
+\sum UV^2 &= U1 \cdot V1^2 + U2 \cdot V2^2 + U3 \cdot V3^2 \\
+&= 3 \cdot (-4)^2 + (-2) \cdot (-1)^2 + 5 \cdot 6^2 \\
+&= 3 \cdot 16 - 2 \cdot 1 + 5 \cdot 36 \\
+&= 48 - 2 + 180 = 226
+\end{align*}
+\]
+
+(f) \(\sum(U^2 - 2V^2 + 2)\):
+
+\[
+\begin{align*}
+\sum(U^2 - 2V^2 + 2) &= U1^2 - 2V1^2 + 2 + U2^2 - 2V2^2 + 2 + U3^2 - 2V3^2 + 2 \\
+&= 3^2 - 2(-4)^2 + 2 + (-2)^2 - 2(-1)^2 + 2 + 5^2 - 2(6)^2 + 2 \\
+&= 9 - 32 + 2 + 4 - 2 + 2 + 25 - 72 + 2 = -62
+\end{align*}
+\]
+
+(g) \(\sum(U/V)\):
+
+\[
+\begin{align*}
+\sum(U/V) &= \frac{U1}{V1} + \frac{U2}{V2} + \frac{U3}{V3} \\
+&= \frac{3}{-4} + \frac{-2}{-1} + \frac{5}{6}
+\end{align*}
+\]
+
+To add these fractions, we need a common denominator, which is 12:
+
+\[
+\sum(U/V) = \frac{-9}{12} + \frac{24}{12} + \frac{10}{12} = \frac{25}{12}
+\]
+
+Therefore we get,
+
+\[
+\sum(U/V) = \frac{25}{12}
+\]
+
+Or in decimal form <b>"2.083333333"</b>
+
+<br> <br>
+
+So, the results are:
+
+(a) \(\sum UV = 20\)
+
+(b) \(\sum(U+3)(V-4) = -37\)
+
+(c) \(\sum V^2 = 53\)
+
+(d) \((\sum U)(\sum V)^2 = 6\)
+
+(e) \(\sum UV^2 = 226\)
+
+(f) \(\sum(U^2 - 2V^2 + 2) = -62\)
+
+(g) \(\sum(U/V) = \frac{25}{12}\)
+
+
+<br> <br>
+We also get the same results when done in an R:
+```{r exerciseThreePointFiftyOne, echo=FALSE}
+# Given values
+U1 <- 3
+U2 <- -2
+U3 <- 5
+V1 <- -4
+V2 <- -1
+V3 <- 6
+
+# Calculate the summations
+
+# (a) ∑UV
+letterA <- U1 * V1 + U2 * V2 + U3 * V3
+
+# (b) ∑(U+3)(V-4)
+letterB <- (U1 + 3) * (V1 - 4) + (U2 + 3) * (V2 - 4) + (U3 + 3) * (V3 - 4)
+
+# (c) ∑V^2
+letterC <- V1^2 + V2^2 + V3^2
+
+# (d) (∑U)(∑V)^2
+letterD <- (U1 + U2 + U3) * (V1 + V2 + V3)^2
+
+# (e) ∑UV^2
+letterE <- U1 * V1^2 + U2 * V2^2 + U3 * V3^2
+
+# (f) ∑(U^2 - 2V^2 + 2)
+letterF <- U1^2 - 2 * V1^2 + 2 + U2^2 - 2 * V2^2 + 2 + U3^2 - 2 * V3^2 + 2
+
+# (g) ∑(U/V)
+letterG <- (U1 / V1) + (U2 / V2) + (U3 / V3)
+
+# Print the results
+cat("(a) ∑UV =", letterA, "\n")
+cat("(b) ∑(U+3)(V-4) =", letterB, "\n")
+cat("(c) ∑V^2 =", letterC, "\n")
+cat("(d) (∑U)(∑V)^2 =", letterD, "\n")
+cat("(e) ∑UV^2 =", letterE, "\n")
+cat("(f) ∑(U^2 - 2V^2 + 2) =", letterF, "\n")
+cat("(g) ∑(U/V) =", letterG, "\n")
+```
+
+
+<br> <br> <br> <br> 
+
+## Proof of Exercise 3.90:
+
+Using R, we are able to get the geometric mean,
+
+```{r exerciseThreePointNinety}
+# Define your set of numbers
+numbers_setA <- c(3, 5, 8, 3, 7, 2)
+numbers_setB <- c(28.5, 73.6, 47.2, 31.5, 64.8)
+
+# Calculate the geometric mean function
+geometric_mean <- function(x) {
+  exp(mean(log(x)))
+}
+
+# Calculate the geometric mean for set (a) and (b)
+geometric_mean_setA <- geometric_mean(numbers_setA)
+geometric_mean_setB <- geometric_mean(numbers_setB)
+
+```
+
+<br>
+
+Thus by printing the results, we get the geometric mean of SET A and B:
+```{r exerciseThreePointNinetyV2, echo=FALSE}
+
+
+# Print the results
+cat("The Geometric mean for SET (a):", geometric_mean_setA, "\n")
+cat("The Geometric mean for SET (b):", geometric_mean_setB, "\n")
+```
+
+<br>
+
